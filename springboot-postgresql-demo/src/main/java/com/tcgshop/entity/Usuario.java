@@ -1,5 +1,7 @@
 package com.tcgshop.entity;
 
+package com.tcgshop.entity;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -7,7 +9,7 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class User { //lo puse User porque Usuario me daba problemas
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,9 +32,10 @@ public class Usuario {
     @ManyToOne
     @JoinColumn(name = "id_tipo_usuario", referencedColumnName = "id_tipo_usuario")
     private TipoUsuario tipoUsuario;
-   //Todavia no esta hecha la tabla TipoUsuario, por eso sale en rojo
+    //Todavia no esta hecha la tabla TipoUsuario, deberia fallar
 }
 
-//Constructor default
-public Usuario() {
-}
+//creo que constructor, getter y setters deberían ir aca ?)
+
+
+//no se si las otras tablas van aca también o en otro archivo dentro de la carpeta entity
