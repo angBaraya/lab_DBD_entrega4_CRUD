@@ -28,7 +28,7 @@ public class Usuario {
     @Column(name = "nombre_usuario", unique = true, length = 30)
     private String nombre;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "id_tipo_usuario", referencedColumnName = "id_tipo_usuario")
     private TipoUsuario tipoUsuario;
 }
