@@ -1,10 +1,10 @@
-package com.tcgshop;
+package com.store.crud;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootPostgresqlDemoApplicationTests {
+class CrudApplicationTests {
 
 	@Test
 	void contextLoads() {

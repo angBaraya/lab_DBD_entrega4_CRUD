@@ -1,15 +1,14 @@
-package com.tcgshop.entity;
-
-package com.tcgshop.entity;
-
+package com.store.crud.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "usuario")
-public class User { //lo puse User porque Usuario me daba problemas
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,10 +31,4 @@ public class User { //lo puse User porque Usuario me daba problemas
     @ManyToOne
     @JoinColumn(name = "id_tipo_usuario", referencedColumnName = "id_tipo_usuario")
     private TipoUsuario tipoUsuario;
-    //Todavia no esta hecha la tabla TipoUsuario, deberia fallar
 }
-
-//creo que constructor, getter y setters deberían ir aca ?)
-
-
-//no se si las otras tablas van aca también o en otro archivo dentro de la carpeta entity
