@@ -1,22 +1,21 @@
 package com.store.crud.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
-import jakarta.persistence.ManyToMany;
+
+import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
 @Data
 @Entity
+@Table(name = "producto")
 public class Producto {
 
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     @Column(name = "id_producto")
-    private Long id;
+    private Long id_producto;
 
     @Column(name = "url", nullable = false)
     private String url;
@@ -27,11 +26,18 @@ public class Producto {
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-    @Column(name = "ventas")
+    @Column(name = "cantidad_ventas")
     private Integer cantidad_ventas;
 
     @Column(name = "precio", nullable = false)
     private Integer precio;
+
+    @ManyToOne
+    @JoinColumn(name = "id_detalle_carro")
+    private DetalleCarro detalleCarro;
+
+    @OneToMany(mappedBy = "producto")
+    private List<DetalleBoleta> detalles;
 
     //Esto es para la tabla intermermedia productoXlista_deseos
     //indica que la definición de la relación se encuentra en la clase ListaDeseos
@@ -44,15 +50,15 @@ public class Producto {
     private Set<Tienda> listaTiendas = new HashSet<>();
 
     //Esto es para la tabla intermermedia carro_de_comprasXproducto
-    @ManyToMany(mappedBy = "productos")
+    @ManyToMany(mappedBy = "listaProductos")
     private Set<CarroDeCompras> listaCarros = new HashSet<>();
 
     //Esto es para la tabla intermermedia rakingXproducto
     @ManyToMany(mappedBy = "productos")
     private Set<Ranking> rankings = new HashSet<>();
 
-    public Producto(Long id, String url, Integer stock, String descripcion, Integer cantidad_ventas, Integer precio) {
-        this.id = id;
+    public Producto(Long id_producto, String url, Integer stock, String descripcion, Integer cantidad_ventas, Integer precio) {
+        this.id_producto = id_producto;
         this.url = url;
         this.stock = stock;
         this.descripcion = descripcion;

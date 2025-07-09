@@ -26,8 +26,7 @@ public class DetalleCarro {
     private CarroDeCompras carro;
 
     //Un detalle de carro puede tener varios productos.
-    @OneToMany
-    @JoinColumn(name = "id_producto", referencedColumnName = "id_producto")
+    @OneToMany(mappedBy = "detalleCarro")
     private List<Producto> productos;
 
 }

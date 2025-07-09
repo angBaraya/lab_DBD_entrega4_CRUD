@@ -5,10 +5,10 @@ import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "cliente")
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     @Column(name = "rut_cliente", length = 12)
     private String rut_cliente;
 

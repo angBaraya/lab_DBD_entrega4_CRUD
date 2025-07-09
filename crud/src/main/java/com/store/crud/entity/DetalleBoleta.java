@@ -3,6 +3,7 @@ package com.store.crud.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import lombok.Data;
+import java.util.List;
 
 @Data
 @Entity
@@ -23,10 +24,9 @@ public class DetalleBoleta {
     @JoinColumn(name = "id_boleta", referencedColumnName = "id_boleta")
     private Boleta boleta;
 
-    //Un detalle de boleta puede tener varios productos.
-    @OneToMany
-    @JoinColumn(name = "id_producto", referencedColumnName = "id_producto")
-    private List<Producto> productos;
+    @ManyToOne
+    @JoinColumn(name = "id_producto") // Esto es lo que usa como foreign key
+    private Producto producto;
 
 
 }
