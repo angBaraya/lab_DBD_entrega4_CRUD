@@ -1,10 +1,10 @@
 package com.store.crud.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
@@ -20,6 +20,15 @@ public class Tienda {
 
     @Column(name = "direccion_tienda", length = 100)
     private String direccion;
+
+    //Esto crea la tabla intermedia tiendaXproducto
+    @ManyToMany
+    @JoinTable(
+            name = "tiendaXproducto",
+            joinColumns = @JoinColumn(name = "id_tienda"),
+            inverseJoinColumns = @JoinColumn(name = "id_producto")
+    )
+    private Set<Producto> productos = new HashSet<>();
 
     public Tienda(Long id, String nombre, String direccion) {
         this.id = id;

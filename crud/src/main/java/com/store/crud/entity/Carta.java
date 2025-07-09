@@ -5,6 +5,9 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Data
 @Entity
 @Table(name = "Carta")
@@ -34,6 +37,15 @@ public class Carta {
     @OneToOne
     @JoinColumn(name = "id_producto", referencedColumnName = "id_producto")
     private Producto producto;
+
+    //Esto crea la tabla intermedia cartaXtipo
+    @ManyToMany
+    @JoinTable(
+            name = "cartaXtipo",
+            joinColumns = @JoinColumn(name = "id_carta"),
+            inverseJoinColumns = @JoinColumn(name = "id_tipo_carta")
+    )
+    private Set<TipoDeCarta> tiposDeCarta = new HashSet<>();
 
     public Carta(Long id_carta, String marca, String estado, String coleccion, String rareza, Integer anio, Producto producto) {
         this.id_carta = id_carta;
