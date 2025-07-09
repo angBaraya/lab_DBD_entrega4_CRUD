@@ -20,4 +20,14 @@ public class Tienda {
 
     @Column(name = "direccion_tienda", length = 100)
     private String direccion;
+
+    public Tienda(Long id, String nombre, String direccion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.direccion = direccion;
+    }
+
+    public Tienda() {
+
+    }
 }

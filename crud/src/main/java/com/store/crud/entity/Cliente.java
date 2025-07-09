@@ -31,6 +31,17 @@ public class Cliente {
     @JoinColumn(name = "id_tipo_usuario", referencedColumnName = "id_tipo_usuario")
     private TipoUsuario tipoUsuario;
 
+    public Cliente(String rut_cliente, String user_cliente, String password_cliente, String direccion_cliente, String nombre_cliente, String apellido_cliente, TipoUsuario tipoUsuario) {
+        this.rut_cliente = rut_cliente;
+        this.user_cliente = user_cliente;
+        this.password_cliente = password_cliente;
+        this.direccion_cliente = direccion_cliente;
+        this.nombre_cliente = nombre_cliente;
+        this.apellido_cliente = apellido_cliente;
+        this.tipoUsuario = tipoUsuario;
+    }
 
+    public Cliente() {
 
+    }
 }

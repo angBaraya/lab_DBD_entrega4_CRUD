@@ -17,4 +17,13 @@ public class Permiso {
 
     @Column(name = "tipo_permiso", length = 50)
     private String tipo_permiso;
+
+    public Permiso(Long id_permiso, String tipo_permiso) {
+        this.id_permiso = id_permiso;
+        this.tipo_permiso = tipo_permiso;
+    }
+
+    public Permiso() {
+
+    }
 }

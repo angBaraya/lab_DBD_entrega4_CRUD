@@ -16,4 +16,12 @@ public class TipoUsuario {
     @Column(name = "rol_usuario", nullable = false, length = 20)
     private String rol_usuario;
 
+    public TipoUsuario(Long id_tipo_usuario, String rol_usuario) {
+        this.id_tipo_usuario = id_tipo_usuario;
+        this.rol_usuario = rol_usuario;
+    }
+
+    public TipoUsuario() {
+
+    }
 }

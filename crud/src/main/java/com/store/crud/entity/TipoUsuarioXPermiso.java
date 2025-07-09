@@ -21,4 +21,12 @@ public class TipoUsuarioXPermiso {
     @Column(name = "id_permiso")
     private Long id_permiso;
 
+    public TipoUsuarioXPermiso(Long id_tipo_usuario, Long id_permiso) {
+        this.id_tipo_usuario = id_tipo_usuario;
+        this.id_permiso = id_permiso;
+    }
+
+    public TipoUsuarioXPermiso() {
+
+    }
 }

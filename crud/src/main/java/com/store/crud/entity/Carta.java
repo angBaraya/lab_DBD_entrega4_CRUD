@@ -34,4 +34,18 @@ public class Carta {
     @OneToOne
     @JoinColumn(name = "id_producto", referencedColumnName = "id_producto")
     private Producto producto;
+
+    public Carta(Long id_carta, String marca, String estado, String coleccion, String rareza, Integer anio, Producto producto) {
+        this.id_carta = id_carta;
+        this.marca = marca;
+        this.estado = estado;
+        this.coleccion = coleccion;
+        this.rareza = rareza;
+        this.anio = anio;
+        this.producto = producto;
+    }
+
+    public Carta() {
+
+    }
 }
