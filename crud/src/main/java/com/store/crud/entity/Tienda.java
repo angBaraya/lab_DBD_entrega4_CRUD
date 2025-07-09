@@ -14,13 +14,13 @@ public class Tienda {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     @Column(name = "id_tienda")
-    private Long id;
+    private Long id_tienda;
 
     @Column(name = "nombre_tienda", length = 30, nullable = false)
-    private String nombre;
+    private String nombre_tienda;
 
     @Column(name = "direccion_tienda", length = 100)
-    private String direccion;
+    private String direccion_tienda;
 
     //Esto crea la tabla intermedia tiendaXproducto
     @ManyToMany
@@ -32,9 +32,9 @@ public class Tienda {
     private Set<Producto> productos = new HashSet<>();
 
     public Tienda(Long id, String nombre, String direccion) {
-        this.id = id;
-        this.nombre = nombre;
-        this.direccion = direccion;
+        this.id_tienda = id;
+        this.nombre_tienda = nombre;
+        this.direccion_tienda = direccion;
     }
 
     public Tienda() {

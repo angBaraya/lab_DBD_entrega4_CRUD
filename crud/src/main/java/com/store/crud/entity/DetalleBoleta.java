@@ -3,7 +3,6 @@ package com.store.crud.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import lombok.Data;
-import java.util.List;
 
 @Data
 @Entity
@@ -27,6 +26,4 @@ public class DetalleBoleta {
     @ManyToOne
     @JoinColumn(name = "id_producto") // Esto es lo que usa como foreign key
     private Producto producto;
-
-
 }

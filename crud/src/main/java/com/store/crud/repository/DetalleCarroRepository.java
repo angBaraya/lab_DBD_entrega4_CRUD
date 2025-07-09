@@ -1,4 +1,7 @@
 package com.store.crud.repository;
 
-public interface DetalleCarroRepository {
+import com.store.crud.entity.DetalleCarro;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DetalleCarroRepository extends JpaRepository<DetalleCarro, Long> {
 }

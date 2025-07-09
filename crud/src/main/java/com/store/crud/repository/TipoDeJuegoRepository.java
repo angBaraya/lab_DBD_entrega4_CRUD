@@ -1,4 +1,7 @@
 package com.store.crud.repository;
 
-public interface TipoDeJuegoRepository {
+import com.store.crud.entity.TipoDeJuego;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TipoDeJuegoRepository extends JpaRepository<TipoDeJuego, Long> {
 }

@@ -1,4 +1,7 @@
 package com.store.crud.repository;
 
-public interface TipoDeCartaRepository {
+import com.store.crud.entity.TipoDeCarta;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TipoDeCartaRepository extends JpaRepository<TipoDeCarta, Long> {
 }

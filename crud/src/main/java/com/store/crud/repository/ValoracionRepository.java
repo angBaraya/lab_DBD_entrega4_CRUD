@@ -1,4 +1,7 @@
 package com.store.crud.repository;
 
-public interface ValoracionRepository {
+import com.store.crud.entity.Valoracion;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ValoracionRepository extends JpaRepository<Valoracion, Long> {
 }

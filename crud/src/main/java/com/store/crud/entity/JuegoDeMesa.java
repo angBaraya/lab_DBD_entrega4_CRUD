@@ -14,7 +14,7 @@ public class JuegoDeMesa {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     @Column(name = "codigo_juego")
-    private long codigo_juego;
+    private Long codigo_juego;
 
     @Column(name = "nombre_juego", length = 30, nullable = false)
     private String nombre_juego;
