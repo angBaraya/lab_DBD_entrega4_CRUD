@@ -47,6 +47,10 @@ public class Producto {
     @ManyToMany(mappedBy = "productos")
     private Set<CarroDeCompras> listaCarros = new HashSet<>();
 
+    //Esto es para la tabla intermermedia rakingXproducto
+    @ManyToMany(mappedBy = "productos")
+    private Set<Ranking> rankings = new HashSet<>();
+
     public Producto(Long id, String url, Integer stock, String descripcion, Integer cantidad_ventas, Integer precio) {
         this.id = id;
         this.url = url;
