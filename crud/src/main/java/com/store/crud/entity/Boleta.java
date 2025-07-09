@@ -1,7 +1,9 @@
 package com.store.crud.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "Boleta")
 public class Boleta {
