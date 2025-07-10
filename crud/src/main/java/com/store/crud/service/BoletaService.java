@@ -33,4 +33,8 @@ public class BoletaService {
     public Boleta update(Boleta boleta){
         return boletaRepo.save(boleta);
     }
+
+    public List<Boleta> getBoletasByMedioPago() {
+        return boletaRepo.findByMedioPago();
+    }
 }

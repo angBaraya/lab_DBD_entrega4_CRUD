@@ -1,7 +1,7 @@
 package com.store.crud.controller;
 
-import com.store.crud.entity.Valoracion;
-import com.store.crud.service.ValoracionService;
+import com.store.crud.entity.TipoDeCarta;
+import com.store.crud.service.TipoDeCartaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,15 +13,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("locura")
-@CrossOrigin(origins = "http://localhost:8080/") // no voy a mentir, no estoy seguro de este localhot
-public class ValoracionController {
+@CrossOrigin(origins = "http://localhost:8080/")
+public class TipoDeCartaController {
 
     @Autowired
-    private ValoracionService valoracionService;
+    private TipoDeCartaService tipoDeCartaService;
 
     @GetMapping
-    public ResponseEntity<List<Valoracion>> getValoraciones() {
-        List<Valoracion> valoraciones = valoracionService.getAll();
-        return ResponseEntity.ok(valoraciones);
+    public ResponseEntity<List<TipoDeCarta>> getTipoDeCartas() {
+        List<TipoDeCarta> tipoDeCartas = tipoDeCartaService.getAll();
+        return ResponseEntity.ok(tipoDeCartas);
     }
 }

@@ -16,11 +16,6 @@ public class CarroDeCompras{
     @Column(name = "id_carro")
     private Long id_carro;
 
-    /*
-    @Column(name = "rut_cliente", length = 12)
-    private String rut_cliente;
-    */
-
     @OneToOne
     @JoinColumn(name = "rut_cliente", referencedColumnName = "rut_cliente")
     private Cliente cliente;
@@ -38,7 +33,6 @@ public class CarroDeCompras{
         this.id_carro = id_carro;
         this.cliente = cliente;
     }
-    public CarroDeCompras() {
+    public CarroDeCompras() {}
         // Constructor por defecto
-    }
 }

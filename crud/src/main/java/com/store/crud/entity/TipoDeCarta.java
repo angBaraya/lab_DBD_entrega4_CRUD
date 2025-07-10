@@ -22,19 +22,10 @@ public class TipoDeCarta {
     @ManyToMany(mappedBy = "tiposDeCarta")
     private Set<Carta> listaCartas = new HashSet<>();
 
-    /*
-    Lo mismo, leer el comentario en TipoDeJuego
-    @ManyToOne
-    @JoinColumn(name = "id_carta", referencedColumnName = "id_carta")
-    private Carta carta;
-    */
-
     public TipoDeCarta(long id_tipo_carta, String nombre_tipo_carta) {
         this.id_tipo_carta = id_tipo_carta;
         this.nombre_tipo_carta = nombre_tipo_carta;
     }
 
-    public TipoDeCarta() {
-
-    }
+    public TipoDeCarta() {}
 }

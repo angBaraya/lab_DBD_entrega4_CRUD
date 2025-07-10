@@ -36,6 +36,5 @@ public class DetalleCarro {
         this.producto = producto;
     }
 
-    public DetalleCarro() {
-    }
+    public DetalleCarro() {}
 }

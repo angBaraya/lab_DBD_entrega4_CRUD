@@ -37,7 +37,5 @@ public class Tienda {
         this.direccion_tienda = direccion_tienda;
     }
 
-    public Tienda() {
-
-    }
+    public Tienda() {}
 }

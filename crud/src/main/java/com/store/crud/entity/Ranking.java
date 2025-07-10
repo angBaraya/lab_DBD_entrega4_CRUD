@@ -39,7 +39,7 @@ public class Ranking{
         this.fecha_actualizacion = fecha_actualizacion;
         this.posicion_ranking = posicion_ranking;
     }
-    public Ranking() {
-        // Constructor por defecto
-    }
+
+    public Ranking() {}
+
 }

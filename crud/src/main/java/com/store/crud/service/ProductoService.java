@@ -17,6 +17,10 @@ public class ProductoService {
         this.productoRepo = productoRepo;
     }
 
+    public static void getProductoById(Long id) {
+        
+    }
+
     public List<Producto> getAll() {
         return productoRepo.findAll();
     }
