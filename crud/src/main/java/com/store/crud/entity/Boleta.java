@@ -20,13 +20,9 @@ public class Boleta {
     @Column(name = "fecha_de_emision")
     private LocalDateTime fecha_de_emision;
 
-    public Boleta(Long id_boleta, String medio_de_pago, LocalDateTime fecha_de_emision) {
-        this.id_boleta = id_boleta;
-        this.medio_de_pago = medio_de_pago;
-        this.fecha_de_emision = fecha_de_emision;
-    }
+    @OneToOne
+    @JoinColumn(name = "id_carro", referencedColumnName = "id_carro")
+    private CarroDeCompras carro;
 
-    public Boleta() {
-
-    }
+    public Boleta() {}
 }

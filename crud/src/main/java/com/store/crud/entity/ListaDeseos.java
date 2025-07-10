@@ -9,8 +9,7 @@ import java.util.HashSet;
 
 @Data
 @Entity
-@Table(name = "lista_deseos", uniqueConstraints = @UniqueConstraint(
-        columnNames = {"id_producto", "rut_cliente"}))
+@Table(name = "lista_deseos")
 public class ListaDeseos {
 
     @Id

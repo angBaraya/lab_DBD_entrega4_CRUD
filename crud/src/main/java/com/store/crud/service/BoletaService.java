@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 public class BoletaService {
-    private BoletaRepository boletaRepo;
+    private final BoletaRepository boletaRepo;
 
     @Autowired
     public BoletaService(BoletaRepository boletaRepo) {

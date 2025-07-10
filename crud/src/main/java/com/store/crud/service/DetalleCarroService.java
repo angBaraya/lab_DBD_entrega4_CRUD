@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 public class DetalleCarroService {
-    private DetalleCarroRepository detalleCarroRepo;
+    private final DetalleCarroRepository detalleCarroRepo;
 
     @Autowired
     public DetalleCarroService(DetalleCarroRepository detalleCarroRepo) {

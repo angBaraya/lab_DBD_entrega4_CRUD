@@ -5,7 +5,6 @@ import jakarta.validation.constraints.Min;
 import lombok.Data;
 
 import java.util.List;
-
 @Data
 @Entity
 @Table(name = "detalle_carro")
@@ -20,13 +19,14 @@ public class DetalleCarro {
     @Min(1)
     private Integer cantidad;
 
-    ///Un detalle de carro pertenece a un carro de compras.
+    /// Un detalle de carro pertenece a un carro de compras.
     @OneToOne
     @JoinColumn(name = "id_carro", referencedColumnName = "id_carro")
     private CarroDeCompras carro;
 
-    //Un detalle de carro puede tener varios productos.
-    @OneToMany(mappedBy = "detalleCarro")
-    private List<Producto> productos;
+    /// Un detalle de carro tiene un producto
+    @ManyToOne
+    @JoinColumn(name = "id_producto")
+    private Producto producto;
 
 }

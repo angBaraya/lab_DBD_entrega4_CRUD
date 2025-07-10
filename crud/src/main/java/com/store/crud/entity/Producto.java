@@ -32,9 +32,9 @@ public class Producto {
     @Column(name = "precio", nullable = false)
     private Integer precio;
 
-    @ManyToOne
-    @JoinColumn(name = "id_detalle_carro")
-    private DetalleCarro detalleCarro;
+    // Un producto puede estar en muchos carros de compras
+    @OneToMany(mappedBy = "producto")
+    private List<DetalleCarro> detallesCarro;
 
     @OneToMany(mappedBy = "producto")
     private List<DetalleBoleta> detalles;

@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 public class ClienteService {
-    private ClienteRepository clienteRepo;
+    private final ClienteRepository clienteRepo;
 
     @Autowired
     public ClienteService(ClienteRepository clienteRepo) {

@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 public class JuegoDeMesaService {
-    private JuegoDeMesaRepository juegoDeMesaRepo;
+    private final JuegoDeMesaRepository juegoDeMesaRepo;
 
     @Autowired
     public JuegoDeMesaService(JuegoDeMesaRepository juegoDeMesaRepo) {
