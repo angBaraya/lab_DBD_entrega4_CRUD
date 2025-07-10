@@ -24,5 +24,11 @@ public class Boleta {
     @JoinColumn(name = "id_carro", referencedColumnName = "id_carro")
     private CarroDeCompras carro;
 
+    public Boleta(Long id_boleta, String medio_de_pago, LocalDateTime fecha_de_emision, CarroDeCompras carro) {
+        this.id_boleta = id_boleta;
+        this.medio_de_pago = medio_de_pago;
+        this.fecha_de_emision = fecha_de_emision;
+        this.carro = carro;
+    }
     public Boleta() {}
 }

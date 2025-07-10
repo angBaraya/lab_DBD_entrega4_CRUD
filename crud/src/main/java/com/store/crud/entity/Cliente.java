@@ -27,7 +27,7 @@ public class Cliente {
     @Column(name = "apellido_cliente", length = 30, nullable = false)
     private String apellido_cliente;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_tipo_usuario", referencedColumnName = "id_tipo_usuario")
     private TipoUsuario tipoUsuario;
 

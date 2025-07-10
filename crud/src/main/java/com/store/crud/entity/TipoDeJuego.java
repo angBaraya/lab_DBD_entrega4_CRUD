@@ -13,10 +13,10 @@ public class TipoDeJuego {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_tipo_juego")
-    private Long idTipoJuego;
+    private Long id_tipo_juego;
 
     @Column(name = "nombre_juego", length = 30)
-    private String nombreJuego;
+    private String nombre_juego;
 
     //Esto es para la tabla intermermedia juegoXtipo
     @ManyToMany(mappedBy = "tiposDeJuego")
@@ -35,8 +35,8 @@ public class TipoDeJuego {
     */
 
     public TipoDeJuego(Long idTipoJuego, String nombreJuego) {
-        this.idTipoJuego = idTipoJuego;
-        this.nombreJuego = nombreJuego;
+        this.id_tipo_juego = id_tipo_juego;
+        this.nombre_juego = nombre_juego;
     }
     
     public TipoDeJuego() {}

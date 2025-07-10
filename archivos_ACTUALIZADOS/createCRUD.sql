@@ -39,11 +39,7 @@ CREATE TABLE IF NOT EXISTS cliente(
 CREATE TABLE IF NOT EXISTS tipo_usuarioXpermiso(
 	id_tipo_usuario INT,
   	id_permiso INT,
-  	PRIMARY KEY (id_tipo_usuario, id_permiso),   
-  	FOREIGN KEY (id_tipo_usuario) REFERENCES tipo_usuario(id_tipo_usuario),
-  	FOREIGN KEY (id_permiso) REFERENCES permiso(id_permiso)
-    --agrege esto como FK, no esta en el diagrama, si no ocupamos esto para las consultas lo sacamos,
-    --si lo ocupamos lo ponemos en el diagrama
+  	PRIMARY KEY (id_tipo_usuario, id_permiso)
 );
 
 CREATE TABLE IF NOT EXISTS tienda(
@@ -66,9 +62,7 @@ CREATE TABLE IF NOT EXISTS producto(
 CREATE TABLE tiendaXproducto(
 	id_tienda INT,
     id_producto INT,
-    PRIMARY KEY (id_tienda, id_producto),
-    FOREIGN KEY (id_tienda) REFERENCES tienda(id_tienda),
-    FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+    PRIMARY KEY (id_tienda, id_producto)
 );
 
 CREATE TABLE IF NOT EXISTS carro_de_compras(
@@ -81,10 +75,7 @@ CREATE TABLE IF NOT EXISTS carro_de_compras(
 CREATE TABLE IF NOT EXISTS carro_de_comprasXproducto(
   id_carro INT,
   id_producto INT,
-  PRIMARY KEY (id_carro, id_producto),
-  FOREIGN KEY (id_carro) REFERENCES carro_de_compras(id_carro),
-  FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
-  -- lo mismo de antes, agregue las FK, de ahi vemos si son utiles o no
+  PRIMARY KEY (id_carro, id_producto)
 );
 
 CREATE TABLE IF NOT EXISTS lista_deseos(
@@ -100,9 +91,7 @@ CREATE TABLE IF NOT EXISTS lista_deseos(
 CREATE TABLE IF NOT EXISTS productoXlista_deseos(
   id_producto INT,
   id_lista_deseos INT,
-  PRIMARY KEY (id_producto, id_lista_deseos),
-  FOREIGN KEY (id_producto) REFERENCES producto(id_producto),
-  FOREIGN KEY (id_lista_deseos) REFERENCES lista_deseos(id_lista_deseos)
+  PRIMARY KEY (id_producto, id_lista_deseos)
 );
 
 CREATE TABLE IF NOT EXISTS boleta(
@@ -138,10 +127,7 @@ CREATE TABLE IF NOT EXISTS ranking(
 CREATE TABLE IF NOT EXISTS rankingXproducto(
   id_ranking INT,
   id_producto INT,
-  PRIMARY KEY (id_ranking, id_producto),
-  FOREIGN KEY (id_ranking) REFERENCES ranking(id_ranking),
-  FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
-  -- agregadas como FK
+  PRIMARY KEY (id_ranking, id_producto)
 );
 
 CREATE TABLE IF NOT EXISTS juego_de_mesa(
@@ -156,9 +142,7 @@ CREATE TABLE IF NOT EXISTS juego_de_mesa(
 CREATE TABLE IF NOT EXISTS tipo_de_juego(
   id_tipo_juego SERIAL,
   nombre_juego VARCHAR(30),
-  codigo_juego INT,
-  PRIMARY KEY (id_tipo_juego),
-  FOREIGN KEY (codigo_juego) REFERENCES juego_de_mesa(codigo_juego)
+  PRIMARY KEY (id_tipo_juego)
 );
 
 CREATE TABLE IF NOT EXISTS carta(
@@ -176,9 +160,7 @@ CREATE TABLE IF NOT EXISTS carta(
 CREATE TABLE IF NOT EXISTS tipo_de_carta(
   id_tipo_carta SERIAL,
   nombre_tipo_carta VARCHAR(30),
-  id_carta INT,
-  PRIMARY KEY (id_tipo_carta),
-  FOREIGN KEY (id_carta) REFERENCES carta(id_carta)
+  PRIMARY KEY (id_tipo_carta)
 );
 
 CREATE TABLE IF NOT EXISTS juegoXtipo (

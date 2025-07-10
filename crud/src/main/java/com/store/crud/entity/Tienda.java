@@ -32,9 +32,9 @@ public class Tienda {
     private Set<Producto> productos = new HashSet<>();
 
     public Tienda(Long id, String nombre, String direccion) {
-        this.id_tienda = id;
-        this.nombre_tienda = nombre;
-        this.direccion_tienda = direccion;
+        this.id_tienda = id_tienda;
+        this.nombre_tienda = nombre_tienda;
+        this.direccion_tienda = direccion_tienda;
     }
 
     public Tienda() {

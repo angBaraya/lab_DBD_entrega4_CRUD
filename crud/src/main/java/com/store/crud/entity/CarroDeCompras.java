@@ -34,4 +34,11 @@ public class CarroDeCompras{
     )
     private Set<Producto> listaProductos = new HashSet<>();
 
+    public CarroDeCompras(Long id_carro, Cliente cliente) {
+        this.id_carro = id_carro;
+        this.cliente = cliente;
+    }
+    public CarroDeCompras() {
+        // Constructor por defecto
+    }
 }

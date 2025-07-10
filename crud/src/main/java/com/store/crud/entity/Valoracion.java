@@ -15,7 +15,6 @@ public class Valoracion{
     @Column(name = "id_valoracion")
     private Long id_valoracion;
 
-    @Lob
     @Column(name = "review")
     private String review;
 
@@ -34,4 +33,16 @@ public class Valoracion{
     @ManyToOne
     @JoinColumn(name = "id_producto", referencedColumnName = "id_producto", insertable = false, updatable = false)
     private Producto producto;
+
+    public Valoracion(Long id_valoracion, String review, Integer cantidad_estrellas, Cliente cliente, Producto producto) {
+        this.id_valoracion = id_valoracion;
+        this.review = review;
+        this.cantidad_estrellas = cantidad_estrellas;
+        this.cliente = cliente;
+        this.producto = producto;
+    }
+
+    public Valoracion() {
+
+    }
 }

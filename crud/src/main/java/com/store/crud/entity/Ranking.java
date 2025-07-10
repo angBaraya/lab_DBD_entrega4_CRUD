@@ -34,4 +34,12 @@ public class Ranking{
     )
     private Set<Producto> productos = new HashSet<>();
 
+    public Ranking(Long id_ranking, LocalDateTime fecha_actualizacion, Integer posicion_ranking) {
+        this.id_ranking = id_ranking;
+        this.fecha_actualizacion = fecha_actualizacion;
+        this.posicion_ranking = posicion_ranking;
+    }
+    public Ranking() {
+        // Constructor por defecto
+    }
 }

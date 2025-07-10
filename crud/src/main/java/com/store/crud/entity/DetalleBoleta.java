@@ -18,12 +18,20 @@ public class DetalleBoleta {
     @Min(1)
     private Integer cantidad;
 
-    //Un detale de boleta pertenece a una boleta.
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_boleta", referencedColumnName = "id_boleta")
     private Boleta boleta;
 
     @ManyToOne
     @JoinColumn(name = "id_producto") // Esto es lo que usa como foreign key
     private Producto producto;
+
+    public DetalleBoleta(Long id_detalle_boleta, Integer cantidad, Boleta boleta, Producto producto) {
+        this.id_detalle_boleta = id_detalle_boleta;
+        this.cantidad = cantidad;
+        this.boleta = boleta;
+        this.producto = producto;
+    }
+
+    public DetalleBoleta() {}
 }

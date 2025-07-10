@@ -17,11 +17,11 @@ public class ListaDeseos {
     @Column(name = "id_lista_deseos")
     private Long id_lista_deseos;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "rut_cliente", referencedColumnName = "rut_cliente")
     private Cliente cliente;
 
-    //Esto crea la tabla intermedia productoXlista_deseos
+    //Esto crea la tabla intermzedia productoXlista_deseos
     @ManyToMany
     @JoinTable(
             name = "productoXlista_deseos",
@@ -29,6 +29,11 @@ public class ListaDeseos {
             inverseJoinColumns = @JoinColumn(name = "id_producto")
     )
     private Set<Producto> productos = new HashSet<>();
+
+    public ListaDeseos(Long id_lista_deseos, Cliente cliente) {
+        this.id_lista_deseos = id_lista_deseos;
+        this.cliente = cliente;
+    }
 
     public ListaDeseos() {}
 }

@@ -1,0 +1,203 @@
+INSERT INTO tipo_usuario(rol_usuario) values 
+('CLIENTE'), 
+('JEFE'), 
+('ADMIN');
+
+
+INSERT INTO producto (url, stock, descripcion, cantidad_ventas, precio) VALUES 
+('https://www.cardcastle.cl/producto/juego-de-cartas/magic', 20, 'Juego de cartas coleccionables Magic: The Gathering', 230, 3500),
+('https://www.cardcastle.cl/producto/juego-de-cartas/naipe-ingles', 15, 'Mazo de naipe inglés, para jugar poker, carioca y muchos más juegos', 300, 3000),
+('https://www.cardcastle.cl/producto/juego-de-cartas/pokemon', 30, 'Cartas coleccionables Pokémon TCG', 120, 5000),
+('https://www.cardcastle.cl/producto/juego-de-cartas/yu-gi-oh!', 20, 'Juego de cartas basado en el anime Yu-Gi-Oh!', 100, 4000),
+('https://www.buggy.cl/producto/juego-de-mesa/monopoly', 10, 'Juego donde simulas negocios y propiedades', 500, 20000),
+('https://www.buggy.cl/producto/juego-de-mesa/catan', 15, 'Juego de estrategia, comercio y civilización', 200, 25000),
+('https://www.hasbro.cl/producto/juego-de-mesa/jenga', 14, 'Juego de habilidad física y precisión', 190, 15000),
+('https://www.hasbro.cl/producto/juego-de-mesa/ajedrez', 10, 'Juego de estrategia por excelencia', 540, 10000),
+('https://www.hasbro.cl/producto/juego-de-mesa/damas', 16, 'Juego de captura y movimiento diagonal', 290, 9000);
+
+
+INSERT INTO public.usuario(correo_usuario, password_usuario, nombre_usuario, id_tipo_usuario) values
+('carlossz@gmail.com', 'leclerc','carlossz', 1),
+('marta.solis@yahoo.cl', 'Pelusa.2015', 'martit4', 1),
+('niko.xd@gmail.com', 'lupepona', 'Nicolas.Admin', 3),
+('feliperjas@gmail.com', 'drowssap234', 'Felipe.Rojas', 2),
+('Guada.Lupe@gmail.com', 'ricopan7', 'Lupe.R', 1),
+('marco.ortz@gmail.com', 'm4rk0.00', 'marcOo', 1),
+('sofiaalarcon@gmail.com', '24111988', 'Sofi_A', 1),
+('Sebastianpolar@gmail.com', 'colocolo91', 'SebaPolar', 1);
+
+INSERT into ranking (fecha_actualizacion, posicion_ranking)
+values('2025-06-20 00:00:00', 1),
+('2025-06-19 00:00:00', 2),
+('2025-06-18 00:00:00', 3),
+('2025-06-17 00:00:00', 4),
+('2025-06-16 00:00:00', 5);
+
+
+insert into juego_de_mesa (nombre_juego, cantidad_de_jugadores, id_producto)
+values ('Monopoly', 6, 5),
+('Catán', 4, 6),
+('Yenga', 4, 7),
+('Ajedréz', 2, 8),
+('Damas', 2, 9);
+
+INSERT INTO cliente(rut_cliente, user_cliente, password_cliente, direccion_cliente, nombre_cliente, apellido_cliente, id_tipo_usuario)
+values ('14520364-1', 'carlossz', 'leclerc', 'Avenida Castilla 55', 'Carlos', 'Sainz', 1),
+('5123987-0', 'martit4', 'Pelusa.2015', 'Avenida Pdte. Sebastian Piñera 2543', 'Marta', 'Solis', 1),
+('20140235-K', 'Lupe.R', 'ricopan7', 'Avenidad SorVicenta 4719', 'Guadalupe', 'Rojas', 1),
+('20789133-0', 'marcOo', 'm4rk0.00', 'Pasaje Navidad 1312', 'Marco', 'Ramos', 1),
+('15488439-4', 'Sofi_A', '24111988', 'Avenida Providencia 4856', 'Sofia', 'Alarcon', 1),
+('22733123-5', 'SebaPolar', 'colocolo91', 'Pasaje Victoria 677', 'Sebastian', 'Polar', 1);
+
+
+insert into valoracion (review, cantidad_estrellas, rut_cliente, id_producto)
+values ('Un clásico familiar que nunca falla. Las reglas son fáciles de entender y siempre terminamos riéndonos mucho. Ideal para jugar con niños, aunque los adultos también lo disfrutan. Muy recomendable para tardes de juego en casa.', 5, '14520364-1', 4),
+('Versátil y atemporal. Esta baraja sirve para jugar cientos de juegos, desde Solitario hasta Póker. Es un infaltable en cualquier hogar. Buena calidad de cartas y resistente al uso continuo', 4, '5123987-0', 5),
+('Bueno para practicar estrategia y probabilidad. Aunque es un juego de azar, el componente mental lo hace muy entretenido. Ideal para jugar con amigos o en simuladores en línea. No recomendable para menores sin supervisión.', 3, '20140235-K', 4),
+('Un juego de mesa muy entretenido y competitivo. Puede durar bastante, pero es ideal para tardes largas. Requiere estrategia y un poco de suerte. Las discusiones por propiedades lo hacen aún más divertido', 4, '20789133-0', 3),
+('Uno de los mejores juegos de estrategia que he probado. Cada partida es distinta, y el factor comercio lo hace muy dinámico. Muy recomendado para quienes disfrutan pensar antes de actuar. Reglas simples pero con mucha profundidad.', 5, '15488439-4', 7);
+
+
+insert into tipo_de_juego (nombre_juego)
+values ('Monopoly'),
+('Catán'),
+('Yenga'),
+('Ajedréz'),
+('Damas');
+
+
+
+insert into tienda (nombre_tienda, direccion_tienda)
+values ('Locura', 'Avenida Balatro 2033'),
+('CardCastle', 'Avenida Sanchez 1017'),
+('JuegosLocos', 'Pasaje Prat 2405'),
+('Buggy', 'Sevilla 5410'),
+('XGames', 'Paseo Caracol 77');
+
+
+INSERT INTO carro_de_compras (rut_cliente)
+VALUES
+('14520364-1'),
+('5123987-0'),
+('20140235-K'),
+('20789133-0'),
+('15488439-4');
+
+
+insert into boleta (medio_de_pago, fecha_de_emision, id_carro)
+values ('Tarjeta de crédito', '2025-06-18 15:00:00',1),
+('Tarjeta de débito', '2025-06-13 13:00:00',2),
+('Tarjeta de débito', '2025-06-14 11:00:00',3),
+('Efectivo', '2025-06-15 10:00:00',4),
+('Tarjeta de crédito', '2025-06-16 13:00:00',5);
+
+INSERT INTO detalle_carro (id_carro, id_producto, cantidad)
+VALUES
+(1, 2, 1),
+(1, 4, 2),
+(2, 5, 1),
+(3, 4, 1),
+(4, 3, 3),
+(5, 7, 1);
+
+
+INSERT INTO lista_deseos (rut_cliente) VALUES
+('14520364-1'),
+('14520364-1'),
+('5123987-0'),
+('20140235-K'),
+('20789133-0'),
+('15488439-4'),	
+('22733123-5');
+
+INSERT INTO producto_xlista_deseos (id_producto, id_lista_deseos) VALUES
+(2,1),
+(4,2),
+(5,3),
+(3,4),
+(2,5),
+(7,6),
+(3,7);
+
+INSERT INTO carta (marca, estado, coleccion, rareza, anio, id_producto)
+VALUES 
+('Magic: The Gathering', 'Poor', 'Fuego II', 'Común', 2014, 1),
+('Pokemon TCG', 'Excellent', 'Agua', 'Rara', 2016, 3),
+('Yu-Gi-Oh!', 'Good', 'Hechizo', 'Poco común', 2021, 4),
+('Dragon Ball Super Card Game', 'Near Mint', 'Saiyajin Blue', 'Muy rara', 2022, 2),
+('Digimon', 'Mint', 'Fuego VI', 'Legendaria', 2010, 2);
+
+insert into detalle_boleta(id_boleta, id_producto, cantidad)
+values(1, 2, 1),
+(1, 4, 2),
+(2, 5, 1),
+(3, 4, 1),
+(4, 3, 3),
+(5, 7, 1);
+
+INSERT INTO tienda_Xproducto (id_tienda, id_producto) VALUES
+(1, 1),
+(2, 2),
+(1, 3),
+(2, 4),
+(4, 5),
+(4, 6),
+(5, 7),
+(5, 8),
+(5, 9);
+
+INSERT INTO ranking_Xproducto (id_ranking, id_producto) VALUES
+(1, 8),
+(2, 5),
+(3, 2),
+(4, 9),
+(5, 1); 
+
+INSERT INTO tipo_de_carta(nombre_tipo_carta)
+VALUES ('Criatura'),
+('Recurso'),
+('Hechizo'),
+('Personaje'),
+('Objeto');
+
+
+INSERT INTO carro_de_compras_Xproducto (id_carro, id_producto) VALUES
+(1, 1),
+(1, 3),
+(2, 2),
+(2, 5),
+(3, 4),
+(4, 6),
+(4, 7),
+(5, 8);
+
+insert into permiso(tipo_permiso)
+values('Subir Productos'),
+('Realizar CRUD'),
+('Actualizar datos usuarios'),
+('Categorizar productos'),
+('Actualizar datos productos'),
+('Eliminar Productos');
+
+Insert into tipo_usuario_Xpermiso(id_tipo_usuario, id_permiso)
+values(1, 3),
+(2, 1),
+(2, 3),
+(2, 4),
+(2, 5),
+(2, 6),
+(3, 2);
+
+INSERT INTO carta_Xtipo (id_carta, id_tipo_carta)
+VALUES (3, 1),
+(2, 2),
+(1, 3),
+(4, 4),
+(5, 5);
+
+INSERT INTO juego_Xtipo (codigo_juego, id_tipo_juego)
+VALUES (1,1),
+(2,2),
+(3,3),
+(4,4),
+(5,5);

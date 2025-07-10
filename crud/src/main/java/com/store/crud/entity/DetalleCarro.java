@@ -20,7 +20,7 @@ public class DetalleCarro {
     private Integer cantidad;
 
     /// Un detalle de carro pertenece a un carro de compras.
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_carro", referencedColumnName = "id_carro")
     private CarroDeCompras carro;
 
@@ -29,4 +29,13 @@ public class DetalleCarro {
     @JoinColumn(name = "id_producto")
     private Producto producto;
 
+    public DetalleCarro(Long id_detalle_carro, Integer cantidad, CarroDeCompras carro, Producto producto) {
+        this.id_detalle_carro = id_detalle_carro;
+        this.cantidad = cantidad;
+        this.carro = carro;
+        this.producto = producto;
+    }
+
+    public DetalleCarro() {
+    }
 }

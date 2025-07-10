@@ -36,4 +36,11 @@ public class JuegoDeMesa {
             inverseJoinColumns = @JoinColumn(name = "id_tipo_juego")
     )
     private Set<TipoDeJuego> tiposDeJuego = new HashSet<>();
+
+    public JuegoDeMesa() {
+        this.codigo_juego = codigo_juego;
+        this.nombre_juego = nombre_juego;
+        this.cantidad_de_jugadores = cantidad_de_jugadores;
+        this.producto = producto;
+    }
 }

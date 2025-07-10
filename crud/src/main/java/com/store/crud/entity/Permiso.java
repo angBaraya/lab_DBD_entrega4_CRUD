@@ -12,6 +12,7 @@ import java.util.Set;
 public class Permiso {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_permiso")
     private Long id_permiso;
 
@@ -28,7 +29,5 @@ public class Permiso {
     @ManyToMany(mappedBy = "permisos")
     private Set<TipoUsuario> tiposUsuario = new HashSet<>();
 
-    public Permiso() {
-
-    }
+    public Permiso() {}
 }

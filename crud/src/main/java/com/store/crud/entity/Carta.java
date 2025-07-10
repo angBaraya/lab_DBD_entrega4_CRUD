@@ -35,7 +35,7 @@ public class Carta {
     @Column(name = "anio")
     private Integer anio;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_producto", referencedColumnName = "id_producto")
     private Producto producto;
 

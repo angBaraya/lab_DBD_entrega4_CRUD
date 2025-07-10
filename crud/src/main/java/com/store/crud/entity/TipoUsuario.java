@@ -33,6 +33,30 @@ public class TipoUsuario {
         this.rol_usuario = rol_usuario;
     }
 
+    public Long getId_tipo_usuario() {
+        return id_tipo_usuario;
+    }
+
+    public void setId_tipo_usuario(Long id_tipo_usuario) {
+        this.id_tipo_usuario = id_tipo_usuario;
+    }
+
+    public String getRol_usuario() {
+        return rol_usuario;
+    }
+
+    public void setRol_usuario(String rol_usuario) {
+        this.rol_usuario = rol_usuario;
+    }
+
+    public Set<Permiso> getPermisos() {
+        return permisos;
+    }
+    public void setPermisos(Set<Permiso> permisos) {
+        this.permisos = permisos;
+    }
+
+
     public TipoUsuario() {
 
     }
