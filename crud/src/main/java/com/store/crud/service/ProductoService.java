@@ -17,8 +17,10 @@ public class ProductoService {
         this.productoRepo = productoRepo;
     }
 
-    public static void getProductoById(Long id) {
-        
+    public Optional<Producto> getProductoById(Long id) {
+        return productoRepo.findById(id);
+    }
+
     }
 
     public List<Producto> getAll() {
@@ -26,6 +28,7 @@ public class ProductoService {
     }
     //revisar antes de
     public Optional<Producto> findById(Long id_producto) {
+        ProductoService productoRepo;
         return productoRepo.findById(id_producto);
     }
     public Producto save(Producto producto) {
